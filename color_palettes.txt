@@ -1,0 +1,11 @@
+Light Periwinkle (Grand Budapest Hotel)
+#C7CEF6
+
+Faded Pink (Grand Budapest Hotel)
+#E6A2C5
+
+Faded Beige (Grand Budapest Hotel)
+#D8A49B
+
+Faded Blue (Grand Budapest Hotel)
+#7496D2
