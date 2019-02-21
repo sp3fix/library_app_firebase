@@ -74,7 +74,7 @@ function colorIfRead(status) {
 
 //FUNCTION TO REMOVE AN ITEM FROM THE LIBRARY
 function removeFromLibrary(evt) {
-    id = evt.path[1].id;
+    id = evt.target.offsetParent.id;
     parent = document.querySelector('.container');
     children = document.getElementById(id);
     parent.removeChild(children);
@@ -83,14 +83,15 @@ function removeFromLibrary(evt) {
 
 //FUNCTION TO MODIFY THE READING STATUS IN THE LIBRARY
 function changeStatus(evt) {
-    //Change the button directly to avoid reloading everything
-    readButton = evt.path[1].querySelector('.book_read'); //select the button
+    // //Change the button directly to avoid reloading everything
+    readButton = evt.target;
     readButton.textContent = (readButton.textContent == 'read') ? 'not read' : 'read'; //change the text of the button
     readButton.className = (readButton.className == 'book_read read') ? 'book_read' : 'book_read read';
-    //Change the item in the library
-    id = evt.path[1].id; //get id of the bookcard
+    // //Change the item in the library
+    id = evt.target.offsetParent.id; //get id of the bookcard
     newStatus = (readButton.textContent == 'read') ? 1 : 0;
     dbBook.child(id).update({ status: newStatus});
+    // console.log(evt.target.offsetParent.id)
 }
 
 
